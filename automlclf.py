@@ -9,7 +9,7 @@ from lazypredict.Supervised import LazyClassifier
 from sklearn.model_selection import train_test_split
 # from sklearn.ensemble import RandomForestRegressor
 # from sklearn.metrics import mean_squared_error, r2_score, accuracy_score
-from sklearn.datasets import load_diabetes, load_boston
+from sklearn.datasets import load_iris, load_wine
 import matplotlib.pyplot as plt
 import seaborn as sns
 import base64
@@ -188,14 +188,14 @@ else:
         #st.write(df.head(5))
 
         # Boston housing dataset
-        boston = load_boston()
+        iris = load_iris()
         #X = pd.DataFrame(boston.data, columns=boston.feature_names)
         #Y = pd.Series(boston.target, name='response')
-        X = pd.DataFrame(boston.data, columns=boston.feature_names).loc[:100] # FOR TESTING PURPOSE, COMMENT THIS OUT FOR PRODUCTION
-        Y = pd.Series(boston.target, name='response').loc[:100] # FOR TESTING PURPOSE, COMMENT THIS OUT FOR PRODUCTION
+        X = pd.DataFrame(iris.data, columns=iris.feature_names).loc[:100] # FOR TESTING PURPOSE, COMMENT THIS OUT FOR PRODUCTION
+        Y = pd.Series(iris.target, name='Species').loc[:100] # FOR TESTING PURPOSE, COMMENT THIS OUT FOR PRODUCTION
         df = pd.concat( [X,Y], axis=1 )
 
-        st.markdown('The Boston housing dataset is used as the example.')
+        st.markdown('The Iris dataset is used as the example.')
         st.write(df.head(5))
 
         build_model(df)
