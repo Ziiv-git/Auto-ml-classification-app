@@ -44,7 +44,7 @@ def build_model(df):
 
     # Build lazy model
     X_train, X_test, Y_train, Y_test = train_test_split(X, Y,test_size = split_size,random_state = seed_number)
-    clf = LazyRegressor(verbose=0,ignore_warnings=False, custom_metric=None)
+    clf = LazyClassifier(verbose=0,ignore_warnings=False, custom_metric=None)
     models_train,predictions_train = clf.fit(X_train, X_train, Y_train, Y_train)
     models_test,predictions_test = clf.fit(X_train, X_test, Y_train, Y_test)
 
