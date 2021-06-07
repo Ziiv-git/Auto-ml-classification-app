@@ -78,20 +78,20 @@ def build_model(df):
     st.pyplot(plt)
     st.markdown(imagedownload(plt,'plot-acc-wide.pdf'), unsafe_allow_html=True)
 
-    with st.markdown('**ROC AUC**'):
-        # Tall
-        predictions_test["ROC AUC"] = [0 if i < 00 else i for i in predictions_test["ROC AUC"] ]
-        plt.figure(figsize=(3, 9))
-        sns.set_theme(style="whitegrid")
-        ax2 = sns.barplot(y=predictions_test.index, x="ROC AUC", data=predictions_test)
-    st.markdown(imagedownload(plt,'plot-roc-auc-tall.pdf'), unsafe_allow_html=True)
-        # Wide
-    plt.figure(figsize=(9, 3))
-    sns.set_theme(style="whitegrid")
-    ax2 = sns.barplot(x=predictions_test.index, y="ROC AUC", data=predictions_test)
-    plt.xticks(rotation=90)
-    st.pyplot(plt)
-    st.markdown(imagedownload(plt,'plot-roc-auc-wide.pdf'), unsafe_allow_html=True)
+#     with st.markdown('**ROC AUC**'):
+#         # Tall
+#         predictions_test["ROC AUC"] = [0 if i < 00 else i for i in predictions_test["ROC AUC"] ]
+#         plt.figure(figsize=(3, 9))
+#         sns.set_theme(style="whitegrid")
+#         ax2 = sns.barplot(y=predictions_test.index, x="ROC AUC", data=predictions_test)
+#     st.markdown(imagedownload(plt,'plot-roc-auc-tall.pdf'), unsafe_allow_html=True)
+#         # Wide
+#     plt.figure(figsize=(9, 3))
+#     sns.set_theme(style="whitegrid")
+#     ax2 = sns.barplot(x=predictions_test.index, y="ROC AUC", data=predictions_test)
+#     plt.xticks(rotation=90)
+#     st.pyplot(plt)
+#     st.markdown(imagedownload(plt,'plot-roc-auc-wide.pdf'), unsafe_allow_html=True)
 
     with st.markdown('**F1 Score**'):
         # Tall
